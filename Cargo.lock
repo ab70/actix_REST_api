@@ -186,6 +186,7 @@ name = "actix_postgresql_api"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "serde_json",
 ]
 
 [[package]]
