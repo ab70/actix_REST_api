@@ -1,8 +1,18 @@
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use serde::Serialize;
+
+#[derive(Serialize)]
+struct MyObj {
+    name: String,
+}
 #[get("/")]
 async fn hello() -> impl Responder {
-    
-    HttpResponse::Ok().body("Hello world!!")
+    let data: &str = "kkl";
+    // HttpResponse::Ok().body("Hello world!!")
+    let obj = MyObj {
+        name: data.to_string(),
+    };
+    HttpResponse::Ok().json(obj)
 }
 
 #[post("/echo")]
