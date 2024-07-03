@@ -21,7 +21,8 @@ async fn echo(req_body: String) -> impl Responder {
 }
 
 async fn manual_hello() -> impl Responder {
-    HttpResponse::Ok().body("Hey theree!")
+    HttpResponse::Ok().body("Hello")
+    // HttpResponse::Ok().body("Hey theree!")
 }
 
 #[actix_web::main]
